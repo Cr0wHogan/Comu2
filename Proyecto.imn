@@ -133,12 +133,12 @@ node n6 {
     network-config {
 	hostname Recon
 	!
-	interface eth0
-	 ipv6 address 2001:1200:0:9::0/64
-	!
 	interface eth3
 	 ip address 10.0.19.1/32
-	 ipv6 address 2001:1200:0:9::1/64
+	 ipv6 address 2001:1200:0:9::3/64
+	!
+	interface eth0
+	 ipv6 address 2001:1200:0:9::0/64
 	!
 	interface eth2
 	 ipv6 address 2001:1200:0:4::6/127
@@ -163,10 +163,11 @@ node n7 {
     network-config {
 	hostname Rdata
 	!
+	interface eth1
+	 ip address 10.0.7.1/24
+	!
 	interface eth0
 	 ipv6 address 2001:1200:0:5::0/64
-	!
-	interface eth1
 	!
 	interface eth3
 	 ipv6 address 2001:1200:0:4::3/127
@@ -234,7 +235,6 @@ node n10 {
 	hostname RouterRec
 	!
 	interface eth1
-	 ip address 10.0.10.1/24
 	 ipv6 address 2001:1200:0:6::0/64
 	!
 	interface eth0
@@ -386,7 +386,6 @@ node n18 {
 	hostname Modle
 	!
 	interface eth0
-	 ip address 10.0.6.10/24
 	 ipv6 address 2001:1200:5::/64
 	!
     }
@@ -404,7 +403,6 @@ node n19 {
 	hostname WEB
 	!
 	interface eth0
-	 ip address 10.0.6.11/24
 	 ipv6 address 2001:1200:5::2/64
 	!
     }
@@ -422,7 +420,6 @@ node n20 {
 	hostname DNS
 	!
 	interface eth0
-	 ip address 10.0.6.12/24
 	 ipv6 address 2001:1200:5::3/64
 	!
     }
@@ -440,13 +437,12 @@ node n21 {
 	hostname PC-IFIMA-1
 	!
 	interface eth0
-	 ip address 10.0.4.20/24
 	 ipv6 address 2001:1200:0:2::1/64
 	!
     }
     canvas c1
-    iconcoords {19.0 65.66666666666667}
-    labelcoords {25.333333333333332 99.66666666666667}
+    iconcoords {19.0 65.0}
+    labelcoords {25.333333333333332 99.0}
     interface-peer {eth0 n29}
     services {DefaultRoute UserDefined}
 }
@@ -458,7 +454,6 @@ node n22 {
 	hostname PC-Admin-Exa
 	!
 	interface eth0
-	 ip address 10.0.5.20/24
 	 ipv6 address 2001:1200:0:1::3/64
 	!
     }
@@ -513,7 +508,7 @@ node n25 {
 	!
 	interface eth0
 	 ip address 10.0.19.20/32
-	 ipv6 address 2001:1200:0:9::5/64
+	 ipv6 address 2001:1200:0:9::4/64
 	!
     }
     canvas c1
@@ -530,7 +525,6 @@ node n26 {
 	hostname PC-OP-Rec
 	!
 	interface eth0
-	 ip address 10.0.10.20/24
 	 ipv6 address 2001:1200:0:6::1/64
 	!
     }
@@ -580,7 +574,7 @@ node n28 {
 	!
 	interface wireless
 	 ip address 10.0.19.0/32
-	 ipv6 address 2001:1200:0:9::4/64
+	 ipv6 address 2001:1200:0:9::/64
 	!
 	mobmodel
 	coreapi
@@ -697,7 +691,6 @@ node n35 {
 	hostname PC-Comedor
 	!
 	interface eth0
-	 ip address 10.0.19.20/32
 	 ipv6 address 2001:1200:0:10::1/64
 	!
     }
@@ -1002,7 +995,7 @@ canvas c1 {
 
 option global {
     interface_names yes
-    ip_addresses no
+    ip_addresses yes
     ipv6_addresses yes
     node_labels yes
     link_labels yes
